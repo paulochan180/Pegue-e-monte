@@ -66,6 +66,7 @@ _____________________________
     >
       <div className="bg-white p-6 max-w-md w-full mx-auto rounded-2xl shadow-lg">
         <h1 className="text-2xl font-bold mb-4 text-black text-center">Monte seu Kit de Festa</h1>
+        <h1 className="text-2xl font-bold mb-4 text-black text-center">Pegue e Monte</h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Medida do painel */}
@@ -78,9 +79,7 @@ _____________________________
               required
             >
               <option value="">Selecione...</option>
-              <option value="50cm">50cm</option>
-              <option value="100cm">100 cm</option>
-              <option value="120cm">120 cm</option>
+              <option value="50cm">50cm</option>          
               <option value="150cm">150 cm</option>
             </select>
           </div>
@@ -119,6 +118,15 @@ _____________________________
                   className="mr-2"
                 />
                 Mesa / Cômoda
+                 </label>
+              <label className="flex items-center text-black">
+                <input
+                  type="checkbox"
+                  checked={opcionais.includes("Escadinha")}
+                  onChange={() => handleOpcionalChange("Escadinha")}
+                  className="mr-2"
+                />
+                Escadinha
               </label>
             </div>
           </div>
@@ -170,13 +178,14 @@ _____________________________
           </div>
 
           <div>
-            <label className="block font-semibold text-black">E-mail:</label>
+            <label className="block font-semibold text-black">
+              E-mail: <span className="text-red-600">(opcional)</span>
+            </label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="border rounded w-full p-2 text-black"
-              required
             />
           </div>
 
@@ -190,7 +199,9 @@ _____________________________
           </div>
 
           <div>
-            <label className="block font-semibold text-black">Observações:</label>
+            <label className="block font-semibold text-black">
+              Observações: <span className="text-red-600">(opcional)</span>
+            </label>
             <textarea
               value={obs}
               onChange={(e) => setObs(e.target.value)}
