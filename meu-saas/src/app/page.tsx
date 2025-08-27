@@ -51,7 +51,7 @@ _____________________________
 📝 Observações: ${obs || "Nenhuma"}
     `.trim();
 
-    const numeroLoja = "21993665606"; // Ajuste seu número aqui
+    const numeroLoja = "5521993665606"; // Ajuste seu número aqui
     const url = `https://wa.me/${numeroLoja}?text=${encodeURIComponent(
       mensagem
     )}`;
